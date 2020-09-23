@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Edit Profile{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" media="screen"/>
+    <div class="signup-form">
+        <form action="" method="post" autocomplete="on">
+            {% csrf_token %}
+            <h2>Edit Profile</h2>
+            <div style="color: blueviolet">
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+            <p>Please fill the required form to edit a profile!</p>
+            <hr>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+					<span class="input-group-text">
+						First Name
+					</span>
+                    </div>
+                    <input type="text" class="form-control" name="first_name"
+                           value="{{ users.first_name }}" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+					<span class="input-group-text">
+						Last Name
+					</span>
+                    </div>
+                    <input type="text" class="form-control" name="last_name" value="{{ users.last_name }}" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+					<span class="input-group-text">
+						Username
+					</span>
+                    </div>
+                    <input type="text" class="form-control" name="username" value="{{ users.username }}" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+					<span class="input-group-text">
+						Email
+					</span>
+                    </div>
+                    <input type="email" class="form-control" name="email" value="{{ users.email }}" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-lg">Save</button>
+            </div>
+            <div style="color: red">
+                {{ form.errors }}
+            </div>
+        </form>
+    </div>
+{% endblock %}

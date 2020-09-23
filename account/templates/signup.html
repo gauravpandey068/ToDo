@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}SignUp{% endblock %}
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" media="screen"/>
+    <div class="signup-form">
+        <form action="" method="post" autocomplete="off">
+            {% csrf_token %}
+            <h2>Sign Up</h2>
+            <p>Please fill in this form to create an account!</p>
+            <hr>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+					<span class="input-group-text">
+						<span class="fa fa-user"></span>
+					</span>
+                    </div>
+                    <input type="text" class="form-control" name="first_name" placeholder="First Name" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+					<span class="input-group-text">
+						<span class="fa fa-user"></span>
+					</span>
+                    </div>
+                    <input type="text" class="form-control" name="last_name" placeholder="Last Name" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+					<span class="input-group-text">
+						<span class="fa fa-user"></span>
+					</span>
+                    </div>
+                    <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+					<span class="input-group-text">
+						<i class="fa fa-paper-plane"></i>
+					</span>
+                    </div>
+                    <input type="email" class="form-control" name="email" placeholder="Email Address"
+                           required="required">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+					<span class="input-group-text">
+						<i class="fa fa-lock"></i>
+					</span>
+                    </div>
+                    <input type="password" class="form-control" name="password1" placeholder="Password" required="required">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+					<span class="input-group-text">
+						<i class="fa fa-lock"></i>
+						<i class="fa fa-check"></i>
+					</span>
+                    </div>
+                    <input type="password" class="form-control" name="password2" placeholder="Confirm Password"
+                           required="required">
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+            </div>
+            <div style="color: red">
+                {{ form.errors }}
+            </div>
+        </form>
+
+        <div class="text-center">Already have an account? <a href="{% url 'login' %}">Login here</a></div>
+    </div>
+{% endblock %}
