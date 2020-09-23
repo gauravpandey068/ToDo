@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '(_597b0&p1(u4q8qwl5n-1)g2t00d=mkeyh(gmtk)(22a5-7at'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['gauravtodo.herokuapp.com']
 
 # Application definition
 
@@ -128,6 +128,6 @@ STATICFILES_DIRS = [
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'your@mailaccount'
-EMAIL_HOST_PASSWORD = 'password'
+EMAIL_HOST_USER = 'luffydevil52@gmail.com'
+EMAIL_HOST_PASSWORD = 'xlrymbxrcqvwsytn'
 EMAIL_USE_TLS = True
